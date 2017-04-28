@@ -61,7 +61,8 @@ $(function() {
       $inputMessage.val('');
       addChatMessage({
         username: username,
-        message: message
+        message: message,
+        color: '#000000'
       });
       // tell server to execute 'new message' and send along one parameter
       socket.emit('new message', message);
@@ -86,7 +87,7 @@ $(function() {
 
     var $usernameDiv = $('<span class="username"/>')
       .text(data.username)
-      .css('color', getUsernameColor(data.username));
+      .css('color', data.color);
     var $messageBodyDiv = $('<span class="messageBody">')
       .text(data.message);
 
