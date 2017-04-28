@@ -25,8 +25,9 @@ io.on('connection', function (socket) {
     socket.broadcast.emit('new message', {
       username: socket.username,
       message: data.message,
-      color: data.color
+      color: data.color.
     });
+    console.log("broadcasted: username "+socket.username+" message "+data.message+" color = "+data.color);
   });
 
   // when the client emits 'add user', this listens and executes
